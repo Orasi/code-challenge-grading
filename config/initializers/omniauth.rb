@@ -16,7 +16,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     :assertion_consumer_service_url     => "https://codechallenge.orasi.com/auth/saml/callback",
     :issuer                             => "https://codechallenge.orasi.com",
     :idp_sso_target_url                 => "https://adfs.orasi.com/adfs/ls/",
-    :idp_cert_fingerprint               => "DF:36:3E:72:B1:36:D8:8E:32:55:41:B8:92:39:A9:03:7C:08:8F:88"
+    :idp_cert_fingerprint               => "DF:36:3E:72:B1:36:D8:8E:32:55:41:B8:92:39:A9:03:7C:08:8F:88",
+    :name_identifier_format             => "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
 
 end
 

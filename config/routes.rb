@@ -2,7 +2,7 @@ CodingChallengeGrading::Application.routes.draw do
   get "archive/:league", to: 'archive#show', as: :archive
 
   get 'login', to: 'welcome#login'
-  post 'auth/wsfed/callback', to: 'welcome#validate_login'
+  post 'auth/saml/callback', to: 'welcome#validate_login'
   get "logout", to: "welcome#logout"
   post 'login', to: 'welcome#validate_login'
   get 'rules', to: 'welcome#rules'
