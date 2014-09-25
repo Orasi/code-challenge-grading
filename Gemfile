@@ -50,4 +50,4 @@ end
 
 # Use debugger
 gem 'byebug', group: [:development, :test]
-gem 'omniauth-wsfed'
+gem 'omniauth-saml'
