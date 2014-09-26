@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
   def logout
     session[:user_id] = nil
 #    redirect_to :login, :error =>  "Logged Out"
-    redirect_to logout_pathlocalo
+    redirect_to logout_path
   end
 
   private
