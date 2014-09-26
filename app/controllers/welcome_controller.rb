@@ -30,11 +30,10 @@ class WelcomeController < ApplicationController
 
   def validate_login
     #Get their picture.
-  
-    if consume(params[:SAMLResponse])
-      throw Exception, true
-    end
-    user = User.find_or_create(request.env['omniauth.auth'].uid)
+    response          = OneLogin::RubySaml::Response.new(saml_response)
+    response.settings = saml_settings
+
+    user = User.find_or_create(response.name_id)
 =begin
     unless user.validate_against_ad(params[:user][:password])
       redirect_to :login, flash: {error: "Invalid username or password."}
