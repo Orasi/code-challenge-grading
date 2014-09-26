@@ -5,7 +5,8 @@ gem 'rails', '>= 4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'#, group: [:development, :test]
 #gem 'mysql'
-
+gem 'better_errors'
+gem 'binding_of_caller'
 # Use SCSS for stylesheets
 gem 'sass', '~> 3.3'
 gem 'sass-rails'
