@@ -33,7 +33,7 @@ class WelcomeController < ApplicationController
     response          = OneLogin::RubySaml::Response.new(params[:SAMLResponse])
     response.settings = saml_settings
 
-    user = User.find_or_create(response.name_id)
+    user = User.find_or_create(response)
 =begin
     unless user.validate_against_ad(params[:user][:password])
       redirect_to :login, flash: {error: "Invalid username or password."}

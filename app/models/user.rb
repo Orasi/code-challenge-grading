@@ -8,14 +8,14 @@ class User < ActiveRecord::Base
 
   attr_accessor :display_name
 
-  def self.find_or_create(username)
+  def self.find_or_create(response)
     #Find the user by their username
-    user = User.find_by(username: username.downcase)
-    
+    user = User.find_by(username: response.name_id.downcase)
+    response.somemethodthatdoesnotexistatall.orthis
     #If the user doesn't exist make a new user.  Split their username to get their first name and last name
     if user.nil?
       user = User.new
-      user.username = username.downcase
+      user.username = response.name_id.downcase
       user.first_name,user.last_name = user.username.split('.')
       user.username = "#{user.first_name}#{user.last_name}".downcase if user.first_name.length==1
     end
