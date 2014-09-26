@@ -2,11 +2,14 @@ class WelcomeController < ApplicationController
   before_action :require_login, only: :index
   def validate_login
     #Get their picture.
-    user = User.find_or_create(params[:user][:username])
+  
+    user = User.find_or_create(request.env['omniauth.auth'].uid)
+=begin
     unless user.validate_against_ad(params[:user][:password])
       redirect_to :login, flash: {error: "Invalid username or password."}
       return
     end
+=end
 	
     if user.save
       user.touch
