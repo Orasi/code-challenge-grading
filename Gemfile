@@ -37,7 +37,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use LDAP for authentication
- gem 'net-ldap'
+gem 'net-ldap'
 
  #SSL in dev
  #gem 'thin'
