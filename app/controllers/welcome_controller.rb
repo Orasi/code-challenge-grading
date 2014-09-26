@@ -2,13 +2,8 @@ require 'ruby-saml'
 class WelcomeController < ApplicationController
   before_action :require_login, only: :index
 
-  def init
-    request = OneLogin::RubySaml::Authrequest.new
-    redirect_to(request.create(saml_settings))
-  end  
-
-  def consume
-    response          = OneLogin::RubySaml::Response.new(params[:SAMLResponse])
+  def consume(saml_response)
+    response          = OneLogin::RubySaml::Response.new(saml_response)
     response.settings = saml_settings
 
     if response.is_valid? && user = current_account.users.find_by_email(response.name_id)
@@ -21,13 +16,10 @@ class WelcomeController < ApplicationController
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
 
-    settings.assertion_consumer_service_url = "http://#{request.host}/auth/saml"
-    settings.issuer                         = request.host
-    settings.idp_sso_target_url             = "https://adfs.orasi.com/adfs/ls/#{OneLoginAppId}"
-    settings.idp_cert_fingerprint           = OneLoginAppCertFingerPrint
-    settings.name_identifier_format         = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
-  # Optional for most SAML IdPs
-    settings.authn_context = "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport"
+    settings.assertion_consumer_service_url = "https://codechallenge.orasi.com/auth/saml/callback"
+    settings.issuer                         = 'https://codechallenge.orasi.com'
+    settings.idp_sso_target_url             = "https://adfs.orasi.com/adfs/ls/"
+    settings.idp_cert_fingerprint           = "DF:36:3E:72:B1:36:D8:8E:32:55:41:B8:92:39:A9:03:7C:08:8F:88"
 
     settings
   end
@@ -39,6 +31,9 @@ class WelcomeController < ApplicationController
   def validate_login
     #Get their picture.
   
+    if consume(params[:SAMLResponse])
+      throw Exception, true
+    end
     user = User.find_or_create(request.env['omniauth.auth'].uid)
 =begin
     unless user.validate_against_ad(params[:user][:password])
