@@ -30,7 +30,7 @@ class WelcomeController < ApplicationController
 
   def validate_login
     #Get their picture.
-    response          = OneLogin::RubySaml::Response.new(saml_response)
+    response          = OneLogin::RubySaml::Response.new(params[:SAMLResponse])
     response.settings = saml_settings
 
     user = User.find_or_create(response.name_id)
