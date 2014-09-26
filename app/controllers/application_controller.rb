@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   
   def require_login
     unless current_user
-      redirect_to :login # halts request cycle
+      redirect_to sso_path # halts request cycle
     end
   end
   

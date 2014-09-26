@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :require_login, only: :index
+  before_action :require_login
   def validate_login
     #Get their picture.
   
@@ -22,7 +22,8 @@ class WelcomeController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    redirect_to :login, :error =>  "Logged Out"
+#    redirect_to :login, :error =>  "Logged Out"
+    redirect_to logout_pathlocalo
   end
 
   private

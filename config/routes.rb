@@ -1,9 +1,11 @@
 CodingChallengeGrading::Application.routes.draw do
   get "archive/:league", to: 'archive#show', as: :archive
 
-  get 'login', to: 'welcome#login'
+#  get 'login', to: 'welcome#login'
+  get 'login', to: redirect('/auth/saml'), as: :sso
   post 'auth/saml/callback', to: 'welcome#validate_login'
-  get "logout", to: "welcome#logout"
+  get 'logout', to: redirect('https://adfs.orasi.com/adfs/ls/?wa=wsignout1.0'), as: :logout
+  #get "logout", to: "welcome#logout"
   post 'login', to: 'welcome#validate_login'
   get 'rules', to: 'welcome#rules'
   
