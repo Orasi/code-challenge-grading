@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   
   def require_login
     unless current_user
-      redirect_to ('auth/saml') # halts request cycle
+      redirect_to :login # halts request cycle
     end
   end
   

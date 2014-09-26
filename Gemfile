@@ -49,5 +49,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'byebug', group: [:development, :test]
-gem 'omniauth-saml'
+gem 'ruby-saml'
