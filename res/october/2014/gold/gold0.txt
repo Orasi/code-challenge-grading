@@ -47,6 +47,7 @@ function goldjs(input){
             counter++
         }
     }
+    match_array.sort();
     return match_array.join(";")
 }
 </script><script type='text/vbscript'>
