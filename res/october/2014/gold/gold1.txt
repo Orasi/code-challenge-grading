@@ -3,7 +3,7 @@ string1_1 = "abcdefghijklmnopqrstuvwxyz"
 string1_2 = "defghijkl"
 test_data_1 = Array(string1_1, string1_2)
 test_data_for_submission = test_data_1
-solution1 = bronzeSolution(test_data_1)
+solution1 = goldSolution(test_data_1)
 submission1 = function_name(test_data_for_submission)
 
 clearTestCase 1

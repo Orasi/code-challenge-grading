@@ -60,7 +60,7 @@ function goldSolution(somearray)
   match_array = lcs(somearray(0), somearray(1))
   for i = 2 to array_size
     for j = 0 to ubound(match_array)
-    if not instr(somearray(i), match_array(j) then
+    if not instr(somearray(i), match_array(j)) then
       DeleteFromArray(match_array, j)
     end if
   next
