@@ -24,9 +24,9 @@ function lcs(lcstest, lcstarget) {
  }
 
 function goldjs(input){
+  input = input.split("<|>");
   for (i=0; i<input.length;i++){
     input[i] = input[i].replace(/[^\w]/gi, '');
-    alert(input[i]);
   }
   arr_len = input.length;
   match_array = lcs(input[0], input[1]);
@@ -48,12 +48,12 @@ function goldjs(input){
       counter++
     }
   }
-  alert(match_array.join(";"));
+  return match_array.join(";")
 }
 </script><script type='text/vbscript'>
 
 
 
 function goldSolution(somearray)
-  goldSolution = goldjs(somearray)
+    goldSolution = goldjs(join(somearray,"<|>"))
 end Function
