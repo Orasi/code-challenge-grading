@@ -3,7 +3,7 @@
 		<div id="challengeHeader">
 			<h1><%= @challenge_title %></h1>
 			<div id ="commentCount">
-				<a href="#comments"><%= Comment.where(month: challenge_month, league: challenge_league).count %> Comments</a>
+				<a href="#comments"><%= Comment.where(month: challenge_month, league: challenge_league, year: challenge_year).count %> Comments</a>
 			</div>
 		</div>
 		<iframe id="challengeDescription" src=<%= "https://dl.dropboxusercontent.com/u/21712432/#{params[:league].capitalize}League#{params[:month].capitalize}#{params[:year]}.pdf" %> height="750"></iframe>

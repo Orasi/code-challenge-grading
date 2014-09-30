@@ -1,4 +1,4 @@
-<% comments = Comment.where(month: challenge_month, league: challenge_league).where("reply_id IS NULL") %>
+<% comments = Comment.where(month: challenge_month, league: challenge_league, year: challenge_year).where("reply_id IS NULL") %>
 <div id="commentRow">
 	<section id="comments">
 		<h3>Comments</h3>
@@ -15,6 +15,7 @@
 	<p>
 		<%= f.hidden_field :month, :value => challenge_month %>
 		<%= f.hidden_field :league, :value => challenge_league %>
+                <%= f.hidden_field :year, :value => challenge_year %>
 	</p>
 
 	<p>

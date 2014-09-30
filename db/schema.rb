@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520130544) do
+ActiveRecord::Schema.define(version: 20140930132442) do
 
   create_table "challenge_winners", force: true do |t|
     t.integer  "challenge_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20140520130544) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "reply_id"
+    t.integer  "year"
   end
 
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"

@@ -1,0 +1,15 @@
+function bronzeSolution(somearray)
+  solution = ""
+  for row = 0 to UBound(somearray)
+    for column = 0 to UBound(somearray,2)
+       if somearray(row, column) = "X" then
+         if solution <> "" then
+           solution = solution & ";"
+         end if
+         solution = solution & "(" & row & "," & column & ")"
+       end if
+    next
+  next
+
+  bronzeSolution = solution
+end Function

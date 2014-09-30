@@ -14,7 +14,8 @@ class CommentsController < ApplicationController
   end
   
   def show
-    render json: Comment.where(month: params[:month], league: params[:league])
+    throw Exception, true
+    render json: Comment.where(month: params[:month], league: params[:league], year: params[:year])
   end
 
   def create
