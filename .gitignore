@@ -22,5 +22,5 @@ public/photos/
 public/
 server.crt
 server.key
-
+*.*~
 /vendor/bundle

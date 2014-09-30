@@ -2,7 +2,6 @@ require 'ruby-saml'
 class WelcomeController < ApplicationController
   before_action :require_login, only: :index
 
-
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
 
@@ -13,6 +12,7 @@ class WelcomeController < ApplicationController
 
     settings
   end
+  
   def login
     if Rails.env.production?
       request = OneLogin::RubySaml::Authrequest.new
