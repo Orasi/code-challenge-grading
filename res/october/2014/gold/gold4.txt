@@ -1,6 +1,6 @@
 
 string4_1 = "how about punctuation and spaces"
-string4_2 = "h@ o !!w$@ a b! @ou $  t% ^p& u*n( c)t _u& ^ at % $i o# %n   %& an## d sp #$ac#e@  @s"
+string4_2 = "h@ o !!w$@ a b! @ou $  t% ^p& u*n( c)t **u& ^ at % $i o# %n   %& an## d sp #$ac#e@  @s"
 test_data_4 = Array(string4_1, string4_2)
 test_data_for_submission = test_data_4
 solution4 = goldSolution(test_data_4)
