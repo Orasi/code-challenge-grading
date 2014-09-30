@@ -1,0 +1,17 @@
+
+string3_1 = "abcdefghijklmnopqrstuvwxyz"
+string3_2 = "defghijkl"
+test_data_3 = Array(string3_1, string3_2)
+test_data_for_submission = test_data_3
+solution3 = goldSolution(test_data_3)
+submission3 = function_name(test_data_for_submission)
+
+clearTestCase 3
+
+addTestCaseResults 3, "<strong>Input Data (2 strings):</strong>  <br>"  + join(test_data_3, ",<br>") + "<br><br><strong>Expected Result:</strong>  " +  solution3 + "<br><br><strong>Actual Result:</strong>   " + submission3 
+
+if solution3 = submission3 then 
+   testCaseStatus 3, "PASS"
+else
+   testCaseStatus 3, "FAIL"
+end if

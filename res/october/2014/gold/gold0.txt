@@ -1,55 +1,5 @@
 </script><script>
-function lcs(lcstest, lcstarget) {
- matchfound = 0;
- results = [];
- lsclen = lcstest.length;
-  for(lcsi=0; lcsi<lcstest.length; lcsi++){
-   lscos=0;
-    for(lcsj=0; lcsj<lcsi+1; lcsj++){
-     re = new RegExp("(?:.{" + lscos + "})(.{" + lsclen + "})", "i");
-     temp = re.test(lcstest);
-     re = new RegExp("(" + RegExp.$1 + ")");
-      if(re.test(lcstarget)){
-       matchfound=1;
-       result = RegExp.$1;
-       results[results.length] = result;
-       }
-     lscos = lscos + 1;
-     }
-     
-    lsclen = lsclen - 1;
-   }
-  result = "";
-  return results;
- }
-
-function goldjs(input){
-  input = input.split("<|>");
-  for (i=0; i<input.length;i++){
-    input[i] = input[i].replace(/[^\w]/gi, '');
-  }
-  arr_len = input.length;
-  match_array = lcs(input[0], input[1]);
-   count1=0;
-  for(i = 2; i < arr_len; i++){
-    for(j=0; j < match_array.length+count1; j++){
-      if (input[i].indexOf(match_array[j-count1]) == -1){
-        match_array.splice(j-count1,1);
-        count1++
-      }  
-    }
-  }
-    counter = 0;
-  
-  for (i=0; i < match_array.length+counter; i++){
-    longest = match_array[0].length  
-    if (match_array[i-counter].length < longest) {
-      match_array.splice(i-counter,1)
-      counter++
-    }
-  }
-  return match_array.join(";")
-}
+function lcs(e,t){matchfound=0;results=[];lsclen=e.length;for(lcsi=0;lcsi<e.length;lcsi++){lscos=0;for(lcsj=0;lcsj<lcsi+1;lcsj++){re=new RegExp("(?:.{"+lscos+"})(.{"+lsclen+"})","i");temp=re.test(e);re=new RegExp("("+RegExp.$1+")");if(re.test(t)){matchfound=1;result=RegExp.$1;results[results.length]=result}lscos=lscos+1}lsclen=lsclen-1}result="";return results}function goldjs(e){e=e.split("<|>");for(i=0;i<e.length;i++){e[i]=e[i].replace(/[^\w]/gi,"")}arr_len=e.length;match_array=lcs(e[0],e[1]);count1=0;for(i=2;i<arr_len;i++){for(j=0;j<match_array.length+count1;j++){if(e[i].indexOf(match_array[j-count1])==-1){match_array.splice(j-count1,1);count1++}}}counter=0;for(i=0;i<match_array.length+counter;i++){longest=match_array[0].length;if(match_array[i-counter].length<longest){match_array.splice(i-counter,1);counter++}}return match_array.join(";")}
 </script><script type='text/vbscript'>
 
 
