@@ -48,12 +48,12 @@ accordion_section = "<div class=""accordion"" id=""accordion2"">" &_
 "    <div id=""collapseOne"" class=""accordion-body collapse in"">" &_
 "      <div class=""accordion-inner"">" &_
 string6_1 &_
-"      </div>
-"    </div>
-"  </div>
-"  <div class=""accordion-group"">
-"    <div class=""accordion-heading"">
-"      <a class=""accordion-toggle"" data-toggle=""collapse"" data-parent=""#accordion2"" href=""#collapseTwo"">
+"      </div>" &_
+"    </div>" &_
+"  </div>" &_
+"  <div class=""accordion-group"">" &_
+"    <div class=""accordion-heading"">" &_
+"      <a class=""accordion-toggle"" data-toggle=""collapse"" data-parent=""#accordion2"" href=""#collapseTwo"">" &_
 "        Text of Preamble to the Consitution" &_
 "      </a>" &_
 "    </div>" &_
