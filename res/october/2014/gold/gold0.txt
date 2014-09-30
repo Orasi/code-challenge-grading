@@ -1,19 +1,18 @@
 </script><script>
-
 function lcs(lcstest, lcstarget) {
- matchfound = 0
+ matchfound = 0;
  results = [];
- lsclen = lcstest.length
+ lsclen = lcstest.length;
   for(lcsi=0; lcsi<lcstest.length; lcsi++){
-   lscos=0
+   lscos=0;
     for(lcsj=0; lcsj<lcsi+1; lcsj++){
      re = new RegExp("(?:.{" + lscos + "})(.{" + lsclen + "})", "i");
      temp = re.test(lcstest);
-     re = new RegExp("(" + RegExp.$1 + ")", "i");
+     re = new RegExp("(" + RegExp.$1 + ")");
       if(re.test(lcstarget)){
        matchfound=1;
        result = RegExp.$1;
-       results[results.length] = result
+       results[results.length] = result;
        }
      lscos = lscos + 1;
      }
@@ -24,55 +23,37 @@ function lcs(lcstest, lcstarget) {
   return results;
  }
 
+function goldjs(input){
+  for (i=0; i<input.length;i++){
+    input[i] = input[i].replace(/[^\w]/gi, '');
+    alert(input[i]);
+  }
+  arr_len = input.length;
+  match_array = lcs(input[0], input[1]);
+   count1=0;
+  for(i = 2; i < arr_len; i++){
+    for(j=0; j < match_array.length+count1; j++){
+      if (input[i].indexOf(match_array[j-count1]) == -1){
+        match_array.splice(j-count1,1);
+        count1++
+      }  
+    }
+  }
+    counter = 0;
+  
+  for (i=0; i < match_array.length+counter; i++){
+    longest = match_array[0].length  
+    if (match_array[i-counter].length < longest) {
+      match_array.splice(i-counter,1)
+      counter++
+    }
+  }
+  alert(match_array.join(";"));
+}
 </script><script type='text/vbscript'>
 
 
-Function DeleteFromArray(aArray, vElementNumber)
-
-  Dim aNewArray
-  ReDim aNewArray(0)
-  Dim vLoopValue, vLimit
-  
-  vLoopValue = 0
-
-  For Each sValue In aArray
-    
-    If vLoopValue <> vElementNumber Then
-      If vLoopValue = 0 And vElementNumber <> 0 Then
-        aNewArray(vLoopValue) = sValue 
-      ElseIf vLoopValue = 1 And vElementNumber = 0 Then
-        aNewArray(vLoopValue) = sValue
-      Else
-        vLimit = Ubound(aNewArray) + 1
-        ReDim Preserve aNewArray(vLimit)
-        aNewArray(Ubound(aNewArray)) = sValue
-      End If
-    End If
-
-    vLoopValue = vLoopValue + 1
-  Next
-  DeleteFromArray = aNewArray
-End Function
 
 function goldSolution(somearray)
-  
-  array_size = UBound(somearray)
-  match_array = lcs(somearray(0), somearray(1))
-  for i = 2 to array_size
-    for j = 0 to ubound(match_array)
-      if not instr(somearray(i), match_array(j)) then
-        DeleteFromArray match_array, j
-      end if
-    next
-  next
-  
-  for k = 0 to ubound(match_array)
-    longest = len(match_array(k))
-    if len(match_array(k)) < longest then
-      DeleteFromArray match_array, k
-    end if
-  next
-
-
-  goldSolution = join(match_array, ";")
+  goldSolution = goldjs(somearray)
 end Function
