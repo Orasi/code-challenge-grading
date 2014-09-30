@@ -60,15 +60,16 @@ function goldSolution(somearray)
   match_array = lcs(somearray(0), somearray(1))
   for i = 2 to array_size
     for j = 0 to ubound(match_array)
-    if not instr(somearray(i), match_array(j)) then
-      DeleteFromArray(match_array, j)
-    end if
+      if not instr(somearray(i), match_array(j)) then
+        DeleteFromArray match_array, j
+      end if
+    next
   next
   
   for k = 0 to ubound(match_array)
     longest = len(match_array(k))
     if len(match_array(k)) < longest then
-      DeleteFromArray(match_array, k)
+      DeleteFromArray match_array, k
     end if
   next
 
