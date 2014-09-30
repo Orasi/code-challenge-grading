@@ -6,32 +6,7 @@ string6_1 = "        When in the Course of human events, it becomes necessary fo
 "He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only. " &_
 "He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures. " &_
 "He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people." &_
-"He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within." &_
-"He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands." &_
-"He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers." &_
-"He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries." &_
-"He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance." &_
-"He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures." &_
-"He has affected to render the Military independent of and superior to the Civil power." &_
-"He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:" &_
-"For Quartering large bodies of armed troops among us:" &_
-"For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States:" &_
-"For cutting off our Trade with all parts of the world:" &_
-"For imposing Taxes on us without our Consent: " &_
-"For depriving us in many cases, of the benefits of Trial by Jury:" &_
-"For transporting us beyond Seas to be tried for pretended offences" &_
-"For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies:" &_
-"For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments:" &_
-"For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever." &_
-"He has abdicated Government here, by declaring us out of his Protection and waging War against us." &_
-"He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people. " &_
-"He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty & perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation." &_
-"He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands." &_ 
-"He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions." &_
-"In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people." &_
-"Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends." &_
-"We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor." 
-string6_2 = "We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America."
+"He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within." 
 test_data_6 = Array(string6_1, string6_2)
 test_data_for_submission = test_data_6
 solution6 = goldSolution(test_data_6)
