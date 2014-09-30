@@ -1,14 +1,22 @@
 
 string2_1 = "abcdefghijklmnopqrstuvwxyz"
-string2_2 = "defghijkl"
-test_data_2 = Array(string2_1, string2_2)
+string2_2 = "abcdfghijklmnopqrstuvwxyz"
+string2_3 = "abcdefghjklmnopqrstuvwxyz"
+string2_4 = "abcdefghijklmnopqrstuvwxyz"
+string2_5 = "abcdfghiklmnopqrstuvwxyz"
+string2_6 = "abcdefghijklmnopqrstuvwxyz"
+string2_7 = "abcdefhijklnopqrstuvwxyz"
+string2_8 = "abcdefghiklmnopqrstuvwxyz"
+string2_9 = "abcdefghijklnopqstuvwxyz"
+string2_10 = "abcdefghijklmnoqrstuvxyz"
+test_data_2 = Array(string2_1, string2_2, string2_3, string2_4, string2_5, string2_6, string2_7, string2_8, string2_9, string2_10)
 test_data_for_submission = test_data_2
 solution2 = goldSolution(test_data_2)
 submission2 = function_name(test_data_for_submission)
 
 clearTestCase 2
 
-addTestCaseResults 2, "<strong>Input Data (2 strings):</strong>  <br>"  + join(test_data_2, ",<br>") + "<br><br><strong>Expected Result:</strong>  " +  solution2 + "<br><br><strong>Actual Result:</strong>   " + submission2 
+addTestCaseResults 2, "<strong>Input Data (10 strings):</strong>  <br>"  + join(test_data_2, ",<br>") + "<br><br><strong>Expected Result:</strong>  " +  solution2 + "<br><br><strong>Actual Result:</strong>   " + submission2 
 
 if solution2 = submission2 then 
    testCaseStatus 2, "PASS"

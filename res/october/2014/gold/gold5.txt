@@ -1,6 +1,6 @@
 
-string5_1 = "abcdefghijklmnopqrstuvwxyz"
-string5_2 = "defghijkl"
+string5_1 = "ARE YOU HANDLING CASE CORRECTLY"
+string5_2 = "are you handling case correctly"
 test_data_5 = Array(string5_1, string5_2)
 test_data_for_submission = test_data_5
 solution5 = goldSolution(test_data_5)
