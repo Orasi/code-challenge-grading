@@ -1,0 +1,17 @@
+
+string1_1 = "abcdefghijklmnopqrstuvwxyz"
+string1_2 = "defghijkl"
+test_data_1 = Array(string1_1, string1_2)
+test_data_for_submission = test_data_1
+solution1 = bronzeSolution(test_data_1)
+submission1 = function_name(test_data_for_submission)
+
+clearTestCase 1
+
+addTestCaseResults 1, "Input Data (2 strings):  <br>"  + join(test_data_1, ",<br>") + "<br>Expected Result:  " +  solution1 + "<br>Actual Result:   " + submission1 
+
+if solution1 = submission1 then 
+   testCaseStatus 1, "PASS"
+else
+   testCaseStatus 1, "FAIL"
+end if

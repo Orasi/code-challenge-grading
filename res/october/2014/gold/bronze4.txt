@@ -1,0 +1,15 @@
+
+test_data_4 = get_array(10,1,3)
+test_data_for_submission = test_data_4
+solution4 = bronzeSolution(test_data_4)
+submission4 = function_name(test_data_for_submission)
+
+clearTestCase 4
+
+addTestCaseResults 4, "Input Data (10 rows, 1 column):  <br>"  + to_string(test_data_4) + "<br>Expected Result:  " +  solution4 + "<br>Actual Result:   " + submission4
+
+if solution4 = submission4 then 
+   testCaseStatus 4, "PASS"
+else
+   testCaseStatus 4, "FAIL"
+end if

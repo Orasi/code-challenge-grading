@@ -1,0 +1,77 @@
+</script><script>
+
+function lcs(lcstest, lcstarget) {
+ matchfound = 0
+ results = [];
+ lsclen = lcstest.length
+  for(lcsi=0; lcsi<lcstest.length; lcsi++){
+   lscos=0
+    for(lcsj=0; lcsj<lcsi+1; lcsj++){
+     re = new RegExp("(?:.{" + lscos + "})(.{" + lsclen + "})", "i");
+     temp = re.test(lcstest);
+     re = new RegExp("(" + RegExp.$1 + ")", "i");
+      if(re.test(lcstarget)){
+       matchfound=1;
+       result = RegExp.$1;
+       results[results.length] = result
+       }
+     lscos = lscos + 1;
+     }
+     
+    lsclen = lsclen - 1;
+   }
+  result = "";
+  return results;
+ }
+
+</script><script type='text/vbscript'>
+
+
+Function DeleteFromArray(aArray, vElementNumber)
+
+  Dim aNewArray
+  ReDim aNewArray(0)
+  Dim vLoopValue, vLimit
+  
+  vLoopValue = 0
+
+  For Each sValue In aArray
+    
+    If vLoopValue <> vElementNumber Then
+      If vLoopValue = 0 And vElementNumber <> 0 Then
+        aNewArray(vLoopValue) = sValue 
+      ElseIf vLoopValue = 1 And vElementNumber = 0 Then
+        aNewArray(vLoopValue) = sValue
+      Else
+        vLimit = Ubound(aNewArray) + 1
+        ReDim Preserve aNewArray(vLimit)
+        aNewArray(Ubound(aNewArray)) = sValue
+      End If
+    End If
+
+    vLoopValue = vLoopValue + 1
+  Next
+  DeleteFromArray = aNewArray
+End Function
+
+function goldSolution(somearray)
+  
+  array_size = UBound(somearray)
+  match_array = lcs(somearray(0), somearray(1))
+  for i = 2 to array_size
+    for j = 0 to ubound(match_array)
+    if not instr(somearray(i), match_array(j) then
+      DeleteFromArray(match_array, j)
+    end if
+  next
+  
+  for k = 0 to ubound(match_array)
+    longest = len(match_array(k))
+    if len(match_array(k)) < longest then
+      DeleteFromArray(match_array, k)
+    end if
+  next
+
+
+  goldSolution = join(match_array, ";")
+end Function
