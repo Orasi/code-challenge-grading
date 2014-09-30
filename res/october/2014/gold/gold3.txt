@@ -1,5 +1,5 @@
 
-string3_1 = "Empty string"
+string3_1 = "Not an Empty string"
 string3_2 = ""
 test_data_3 = Array(string3_1, string3_2)
 test_data_for_submission = test_data_3

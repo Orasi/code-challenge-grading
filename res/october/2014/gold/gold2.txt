@@ -16,7 +16,7 @@ submission2 = function_name(test_data_for_submission)
 
 clearTestCase 2
 
-addTestCaseResults 2, "<strong>Input Data (10 strings):</strong>  <br>"  + join(test_data_2, ",<br>") + "<br><br><strong>Expected Result:</strong>  " +  solution2 + "<br><br><strong>Actual Result:</strong>   " + submission2 
+addTestCaseResults 2, "<strong>Input Data (10 strings):</strong>  <br>"""  + join(test_data_2, """,<br>""") + """<br><br><strong>Expected Result:</strong>  " +  solution2 + "<br><br><strong>Actual Result:</strong>   " + submission2 
 
 if solution2 = submission2 then 
    testCaseStatus 2, "PASS"
