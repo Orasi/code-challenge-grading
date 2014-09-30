@@ -1,9 +1,8 @@
-
-function bronzeSolution(array)
+function bronzeSolution(somearray)
   solution = ""
-  for row = 0 to UBound(array)
-    for column = 0 to UBound(array)
-       if array(row, column) then
+  for row = 0 to UBound(somearray)
+    for column = 0 to UBound(somearray,2)
+       if somearray(row, column) = "X" then
          if solution <> "" then
            solution = solution & ";"
          end if
@@ -13,4 +12,4 @@ function bronzeSolution(array)
   next
 
   bronzeSolution = solution
-end function
+end Function

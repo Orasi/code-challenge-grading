@@ -6,7 +6,7 @@ submission5 = function_name(test_data_for_submission)
 
 clearTestCase 5
 
-addTestCaseResults 5, "Input String:  "  + test_data_5 + "<br>Expected Result:  " +  solution5 + "<br>Actual Result:   " + submission5
+addTestCaseResults 5, "Input Data (1 row, 10 columns): <br>"  + to_string(test_data_5) + "<br>Expected Result:  " +  solution5 + "<br>Actual Result:   " + submission5
 
 if solution5 = submission5 then 
    testCaseStatus 5, "PASS"
