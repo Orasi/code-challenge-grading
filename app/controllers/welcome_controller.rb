@@ -2,16 +2,6 @@ require 'ruby-saml'
 class WelcomeController < ApplicationController
   before_action :require_login, only: :index
 
-  def consume(saml_response)
-    response          = OneLogin::RubySaml::Response.new(saml_response)
-    response.settings = saml_settings
-
-    if response.is_valid? && user = current_account.users.find_by_email(response.name_id)
-      authorize_success(user)
-    else
-      authorize_failure(user)
-    end
-  end
 
   def saml_settings
     settings = OneLogin::RubySaml::Settings.new
@@ -24,8 +14,11 @@ class WelcomeController < ApplicationController
     settings
   end
   def login
-    request = OneLogin::RubySaml::Authrequest.new
-    redirect_to(request.create(saml_settings))
+    if Rails.env.production?
+      request = OneLogin::RubySaml::Authrequest.new
+      redirect_to(request.create(saml_settings))
+      return
+    end
   end
 
   def validate_login

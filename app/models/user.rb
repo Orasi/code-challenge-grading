@@ -11,12 +11,12 @@ class User < ActiveRecord::Base
   def self.find_or_create(response)
     #Find the user by their username
     user = User.find_by(username: response.name_id.downcase)
-throw Exception, true
     #If the user doesn't exist make a new user.  Split their username to get their first name and last name
     if user.nil?
       user = User.new
       user.username = response.name_id.downcase
       user.first_name,user.last_name = user.username.split('.')
+      user.email = user.username + "@orasi.com"
       user.username = "#{user.first_name}#{user.last_name}".downcase if user.first_name.length==1
     end
     
