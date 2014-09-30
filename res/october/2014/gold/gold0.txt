@@ -23,6 +23,10 @@ function lcs(lcstest, lcstarget) {
     return results;
 }
 
+function toUnique(a,b,c){               //array,placeholder,placeholder
+ b=a.length;while(c=--b)while(c--)a[b]!==a[c]||a.splice(c,1)
+}
+
 function goldjs(input){
     input = input.split("<|>");
     for (i=0; i<input.length;i++){
@@ -47,6 +51,9 @@ function goldjs(input){
             counter++
         }
     }
+    var b
+    var c
+    toUnique(match_array,b,c)
     match_array.sort();
     return match_array.join(";")
 }
