@@ -64,7 +64,7 @@ function silver_solution(doc, pat, apt, name)
 
   for i = 0 to ubound(doctors_schedule) 
     for j = 0 to ubound(times)
-      if not instr(doctors_schedule(i), times(j)) > -1 then
+      if not instr(doctors_schedule(i), times(j)) > 0 then
         available_time = times(j)
         available_day = i
         continue = false
