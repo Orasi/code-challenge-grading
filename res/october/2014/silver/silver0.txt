@@ -87,4 +87,9 @@ function silver_solution(doc, pat, apt, name)
   output_string = day_names(available_day) & "@" & available_time & " with Dr. " & doctor_name
 end function
 
+function get_random_name(pats)
+   index = Int( ( UBound(pats) - 0 + 1 ) * Rnd + 0 )
+   get_random_name = pats(index, 1) & " " & pats(index,2)
+end function
+
 
