@@ -1,5 +1,5 @@
 
-for i = 1 to 5
+
   doc_copy1 = doctors_array
   pat_copy1 = patients_array
   apt_copy1 = appointments_array
@@ -9,17 +9,17 @@ for i = 1 to 5
   solution1 = silver_solution(doc_copy1, pat_copy1, apt_copy1, test_data_1)
   submission1 = function_name(doctors_array, patientes_array, appointments_array, test_data_for_submission)
 
-  clearTestCase i
+  clearTestCase 1
 
-  addTestCaseResults i, "<strong>Patient Name:</strong>  <br>"  + name1 + "<br><strong>Expected Result:  </strong>" +  solution1 + "<br><strong>Actual Result:   </strong>" + submission1 
+  addTestCaseResults 1, "<strong>Patient Name:</strong>  <br>"  + name1 + "<br><strong>Expected Result:  </strong>" +  solution1 + "<br><strong>Actual Result:   </strong>" + submission1 
 
   if solution1 = submission1 then 
-     testCaseStatus i, "PASS"
+     testCaseStatus 1, "PASS"
   else
-     testCaseStatus i, "FAIL"
+     testCaseStatus 1, "FAIL"
   end if
 
   doc_copy1 = ""
   pat_copy1 = ""
   apt_copy1 = ""
-next
+

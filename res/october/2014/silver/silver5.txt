@@ -1,0 +1,24 @@
+
+  doc_copy5 = doctors_array
+  pat_copy5 = patients_array
+  apt_copy5 = appointments_array
+  test_data_5 = get_random_name(patients_array)
+  name5 = test_data_5
+  test_data_for_submission = test_data_5
+  solution5 = silver_solution(doc_copy5, pat_copy5, apt_copy5, test_data_5)
+  submission5 = function_name(doctors_array, patientes_array, appointments_array, test_data_for_submission)
+
+  clearTestCase 5
+
+  addTestCaseResults 5, "<strong>Patient Name:</strong>  <br>"  + name5 + "<br><strong>Expected Result:  </strong>" +  solution5 + "<br><strong>Actual Result:   </strong>" + submission5
+
+  if solution5 = submission5 then 
+     testCaseStatus 5, "PASS"
+  else
+     testCaseStatus 5, "FAIL"
+  end if
+
+  doc_copy5 = ""
+  pat_copy5 = ""
+  apt_copy5 = ""
+
