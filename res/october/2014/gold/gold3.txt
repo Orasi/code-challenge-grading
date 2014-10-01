@@ -1,6 +1,6 @@
 
-string3_1 = "Not an Empty string"
-string3_2 = ""
+string3_1 = "abcdefghijklm"
+string3_2 = "nopqrstuvwxyz"
 test_data_3 = Array(string3_1, string3_2)
 test_data_for_submission = test_data_3
 solution3 = goldSolution(test_data_3)
