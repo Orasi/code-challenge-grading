@@ -49,7 +49,7 @@ function silver_solution(doc, pat, apt, name)
         case "Tuesday"
           doctors_schedule(1) = doctors_schedule(1) & apt(i,4) & "<|>"
         case "Wednesday"
-          doctors_schedule(3) = doctors_schedule(2) & apt(i,4) & "<|>"
+          doctors_schedule(2) = doctors_schedule(2) & apt(i,4) & "<|>"
         case "Thursday"
           doctors_schedule(3) = doctors_schedule(3) & apt(i,4) & "<|>"        
         case "Friday"
@@ -64,7 +64,7 @@ function silver_solution(doc, pat, apt, name)
 
   for i = 0 to ubound(doctors_schedule) 
     for j = 0 to ubound(times)
-      if not instr(doctors_schedule(i), times(j)) then
+      if not instr(doctors_schedule(i), times(j)) > -1 then
         available_time = times(j)
         available_day = i
         continue = false
