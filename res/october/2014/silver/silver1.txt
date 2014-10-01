@@ -4,13 +4,14 @@ doc_copy1 = doctors_array
 pat_copy1 = patients_array
 apt_copy1 = appointments_array
 test_data_1 = get_random_name(patients_array)
+name1 = test_data_1
 test_data_for_submission = test_data_1
 solution1 = silver_solution(doc_copy1, pat_copy1, apt_copy1, test_data_1)
 submission1 = function_name(doctors_array, patientes_array, appointments_array, test_data_for_submission)
 
 clearTestCase 1
 
-addTestCaseResults 1, "<strong>Patient Name:</strong>  <br>"  + test_data_1 + "<br><strong>Expected Result:  </strong>" +  solution1 + "<br><strong>Actual Result:   </strong>" + submission1 
+addTestCaseResults 1, "<strong>Patient Name:</strong>  <br>"  + name1 + "<br><strong>Expected Result:  </strong>" +  solution1 + "<br><strong>Actual Result:   </strong>" + submission1 
 
 if solution1 = submission1 then 
    testCaseStatus 1, "PASS"
